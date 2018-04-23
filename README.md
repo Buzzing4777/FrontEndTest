@@ -7,7 +7,7 @@ This test will help in evaluating a potential new front-end engineer.
 
 ### Project Requirements
 - Must be fully responsive.
-- Contact form must send text to ux@taxslayer.com.
+- Contact form must send text to uxteam@taxslayer.com.
 - Create a transition or animation on an element of your choice.
 
 ### Project Technology Requirements
@@ -29,7 +29,7 @@ This test will help in evaluating a potential new front-end engineer.
   - ![#f1ce4a](https://placehold.it/15/f1ce4a/000000?text=+) `#f1ce4a`
   - ![#121921](https://placehold.it/15/121921/000000?text=+) `#121921`
 
-#### If you have any questions, or feel you are missing assets, please [contact us](mailto:ux@taxslayer.com).
+#### If you have any questions, or feel you are missing assets, please [contact us](mailto:uxteam@taxslayer.com).
 
 -----
 
