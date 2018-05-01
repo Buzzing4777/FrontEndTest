@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Front End Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div id='header-container' class='container'>
+            <img src="~/Content/Images/logo.svg" id='logo' />
+
+            <div id='navigation' class='d-none d-md-block'>
+                <a href='#'> home </a>
+                <a href='#company'> company </a>
+                <a href='#products'> products </a>
+                <a href='#contact'> contact </a>
+            </div>
+            <button class="btn d-md-none" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false" aria-controls="collapseExample">
+                [collapse menu]
+            </button>
+        </div>
+
+        <div id='mobile-nav' class='d-md-none collapse'>
+            <a href='#'> home </a>
+            <a href='#company'> company </a>
+            <a href='#products'> products </a>
+            <a href='#contact'> contact </a>
+        </div>
+
+    </header>
+    <div id='hero' class='d-flex flex-column align-items-center mt-md-3'>
+
+        <h1 id='intro-heading' class='px-2 mt-2 mb-0'>
+            AllClouds bring cool stuff!
+        </h1>
+        <div id='intro-body' class='mb-5 px-2'>
+            Lorem ipsum dolor sit amen, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        </div>
+        <div id='intro-actions' class='d-flex flex-column flex-sm-row mb-5'>
+            <button class='btn-round btn-yellow'> learn more </button>
+            <button class='btn-round'> get started now </button>
+        </div>
+
+        <img id='family-graphic' class='d-none d-md-block' src='~/Content/Images/Family.png' />
+
+    </div>
+
+    <div class="container body-content">
+        <hr />
+        @RenderBody();
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

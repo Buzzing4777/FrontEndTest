@@ -1,0 +1,136 @@
+﻿$blue: #4981d3;
+$blue-dark: #33415b;
+$blue-light: #abd4fd;
+$orange: #e18401;
+$red: #f12e30;
+$green: #019a39;
+$yellow: #f1ce4a;
+$black: #121921;
+
+$blue-lightest: #eef5fe;
+
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: $blue-lightest;
+}
+
+
+button.btn-round {
+    padding: 10px 48px;
+    background: none;
+    color: $blue;
+    border: 2px solid $blue;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+
+    &.btn-yellow {
+        color: white;
+        background-color: $yellow;
+        border-color: $yellow;
+    }
+
+    &.btn-green {
+        color: white;
+        background-color: $green;
+        border-color: $green;
+    }
+}
+
+header {
+  border-bottom: 1px solid #E2EBF6;
+  #header-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    // max-width: 900px;
+    justify-content: space-between;
+    padding: 12px 24px;
+    height: 120px;
+  }
+
+}
+
+#logo {
+  height: 50px;
+}
+
+#navigation {
+  margin-bottom: 4px;
+  a {
+    text-decoration: none;
+    color: #7687A4;
+    margin-left: 24px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+#mobile-nav a {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0 auto 24px;
+    color: #7687A4;
+    font-size: 18px;
+}
+
+#hero {
+  background: url('../Content/Images/cloudsbg.png') no-repeat center bottom ;
+  background-size: 100%;
+
+  
+  #intro-heading {
+    font-size: 32px;
+    color: #34425A;
+    &:before, &:after {
+      content: '–';
+      font-size: 56px;
+      position: relative;
+      top: 10px;
+    }
+  }
+  
+  #intro-body {
+    color: #777777;
+    max-width: 540px;
+  }
+  
+  #intro-actions button {
+    margin: 8px;
+  }
+  
+  #family-graphic {
+    width: 600px;
+    margin-top: 24px;
+  }
+}
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
