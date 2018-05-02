@@ -24,10 +24,12 @@ namespace FrontEndTest.Controllers
             if (ModelState.IsValid)
             {
                 var body = "<p>From: {0}</p> <p>Email: <a href=\"mailto:{1}\">{1}</a></p> <p>Phone#: {2}</p>";
+                var subject = "AllCloud - new contact {0}";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress("bearshuford@gmail.com")); 
-                message.Subject = "AllCloud - new contact {0}";
+                message.To.Add(new MailAddress("uxteam@taxslayer.com")); 
                 message.Body = string.Format(body, model.Name, model.Email, model.Phone);
+                message.Subject = string.Format(subject, model.Name);
+
                 message.IsBodyHtml = true;
                 using (var smtp = new SmtpClient())
                 {

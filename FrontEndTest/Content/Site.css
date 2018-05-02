@@ -185,7 +185,7 @@ header {
   #contact .contact--box {
     background-color: white;
     border-radius: 8px;
-    box-shadow: -1rem 1rem 0px 0px #ADD5EE; }
+    box-shadow: -1.5rem 1.5rem 0px 0px #ADD5EE; }
   #contact .contact--heading {
     color: #34425A;
     font-size: 22px; }
@@ -206,4 +206,18 @@ header {
     width: 55%;
     right: -6%;
     top: 5rem; }
+
+footer {
+  background-color: #121921;
+  color: white;
+  font-size: 0.625rem; }
+  footer #footer--nav a {
+    font-size: .75rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 8px; }
+  footer #copyright {
+    color: #4981d3;
+    font-size: .75rem;
+    text-align: center; }
 
