@@ -9,7 +9,15 @@ $black: #121921;
 
 $blue-lightest: #eef5fe;
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
 
+    100% {
+        transform: translateX(0);
+    }
+}
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -20,7 +28,7 @@ body {
 
 
 button.btn-round {
-    padding: (5rem/8) 48px;
+    padding: (5rem/7) 48px;
     background: none;
     color: $blue;
     border: 2px solid $blue;
@@ -41,6 +49,13 @@ button.btn-round {
         background-color: $green;
         border-color: $green;
     }
+}
+
+#rainbow-topper {
+    width: 100%;
+    border-top: 4px solid;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    border-image: linear-gradient(to right, $blue-dark 0px, $blue-dark percentage(1/7), $blue percentage(1/7), $blue percentage(2/7), $blue-light percentage(2/7), $blue-light percentage(3/7), $orange percentage(3/7), $orange percentage(4/7), $red percentage(4/7), $red percentage(5/7), $green percentage(5/7), $green percentage(6/7), $blue-dark percentage(6/7), $blue-dark 100%) 4;
 }
 
 header {
@@ -103,8 +118,8 @@ header {
             content: '–';
             font-size: 3.5rem;
             position: relative;
-            top: (5rem/8);
-            margin-bottom: (5rem/8);
+            top: (5rem/7);
+            margin-bottom: (5rem/7);
         }
     }
 

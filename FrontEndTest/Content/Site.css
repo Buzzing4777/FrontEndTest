@@ -1,4 +1,10 @@
 ﻿@charset "UTF-8";
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0); } }
+
 * {
   font-family: 'Roboto', sans-serif; }
 
@@ -6,7 +12,7 @@ body {
   background-color: #eef5fe; }
 
 button.btn-round {
-  padding: 0.625rem 48px;
+  padding: 0.71429rem 48px;
   background: none;
   color: #4981d3;
   border: 2px solid #4981d3;
@@ -23,6 +29,12 @@ button.btn-round {
     color: white;
     background-color: #019a39;
     border-color: #019a39; }
+
+#rainbow-topper {
+  width: 100%;
+  border-top: 4px solid;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  border-image: linear-gradient(to right, #33415b 0px, #33415b 14.28571%, #4981d3 14.28571%, #4981d3 28.57143%, #abd4fd 28.57143%, #abd4fd 42.85714%, #e18401 42.85714%, #e18401 57.14286%, #f12e30 57.14286%, #f12e30 71.42857%, #019a39 71.42857%, #019a39 85.71429%, #33415b 85.71429%, #33415b 100%) 4; }
 
 header {
   border-bottom: 1px solid #E2EBF6; }
@@ -64,8 +76,8 @@ header {
       content: '–';
       font-size: 3.5rem;
       position: relative;
-      top: 0.625rem;
-      margin-bottom: 0.625rem; }
+      top: 0.71429rem;
+      margin-bottom: 0.71429rem; }
       @media (min-width: 576px) {
         #hero #intro-heading:before, #hero #intro-heading:after {
           display: inline;
