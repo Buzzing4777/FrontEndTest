@@ -9,53 +9,19 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header>
-        <div id='header-container' class='container'>
-            <img src="~/Content/Images/logo.svg" id='logo' />
 
-            <div id='navigation' class='d-none d-md-block'>
-                <a href='#'> home </a>
-                <a href='#company'> company </a>
-                <a href='#products'> products </a>
-                <a href='#contact'> contact </a>
-            </div>
-            <button class="btn d-md-none" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-expanded="false" aria-controls="collapseExample">
-                [collapse menu]
-            </button>
-        </div>
+    @Html.Partial("_Header")
+    @Html.Partial("_Hero")
+    @Html.Partial("_Company")
+    @Html.Partial("_Stats")
+    @Html.Partial("_Products")
+    @Html.Partial("_ContactForm")
+    @RenderBody()
+  
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
 
-        <div id='mobile-nav' class='d-md-none collapse'>
-            <a href='#'> home </a>
-            <a href='#company'> company </a>
-            <a href='#products'> products </a>
-            <a href='#contact'> contact </a>
-        </div>
-
-    </header>
-    <div id='hero' class='d-flex flex-column align-items-center mt-md-3'>
-
-        <h1 id='intro-heading' class='px-2 mt-2 mb-0'>
-            AllClouds bring cool stuff!
-        </h1>
-        <div id='intro-body' class='mb-5 px-2'>
-            Lorem ipsum dolor sit amen, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        </div>
-        <div id='intro-actions' class='d-flex flex-column flex-sm-row mb-5'>
-            <button class='btn-round btn-yellow'> learn more </button>
-            <button class='btn-round'> get started now </button>
-        </div>
-
-        <img id='family-graphic' class='d-none d-md-block' src='~/Content/Images/Family.png' />
-
-    </div>
-
-    <div class="container body-content">
-        <hr />
-        @RenderBody();
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

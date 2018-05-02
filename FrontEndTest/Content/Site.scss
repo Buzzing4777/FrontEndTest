@@ -20,14 +20,14 @@ body {
 
 
 button.btn-round {
-    padding: 10px 48px;
+    padding: (5rem/8) 48px;
     background: none;
     color: $blue;
     border: 2px solid $blue;
     border-radius: 20px;
-    text-transform: uppercase;
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 600;
+    white-space: nowrap;
 
     &.btn-yellow {
         color: white;
@@ -48,9 +48,8 @@ header {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    // max-width: 900px;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: .75rem 24px;
     height: 120px;
   }
 
@@ -82,55 +81,222 @@ header {
 }
 
 #hero {
-  background: url('../Content/Images/cloudsbg.png') no-repeat center bottom ;
-  background-size: 100%;
+    background: url('../Content/Images/cloudsbg.png') no-repeat center calc(50% + 1.5rem);
+    background-size: 100%;
 
-  
-  #intro-heading {
-    font-size: 32px;
-    color: #34425A;
-    &:before, &:after {
-      content: '–';
-      font-size: 56px;
-      position: relative;
-      top: 10px;
+
+    #intro-heading {
+        font-size: 2rem;
+        line-height: 1.75;
+        color: #34425A;
+
+        &:before, &:after {
+            @media (min-width: 576px) {
+                display: inline;
+                margin-bottom: 0;
+            }
+
+            display: none;
+            content: '–';
+            font-size: 3.5rem;
+            position: relative;
+            top: (5rem/8);
+            margin-bottom: (5rem/8);
+        }
     }
-  }
-  
-  #intro-body {
-    color: #777777;
-    max-width: 540px;
-  }
-  
-  #intro-actions button {
-    margin: 8px;
-  }
-  
-  #family-graphic {
-    width: 600px;
-    margin-top: 24px;
-  }
+
+    #intro-body {
+        color: #777777;
+        max-width: 540px;
+    }
+
+    #intro-actions button {
+        margin: 4px 8px;
+    }
+
+    #family-graphic {
+        width: 600px;
+        margin-top: 24px;
+    }
 }
 
 
+#company {
+    background-color: white;
 
+    .company--about {
+        color: #34425A;
+        // max-width: 800px;
+    }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    .company--heading {
+        font-size: 22px;
+    }
+
+    .company--description {
+        font-size: 12px;
+    }
+
+    #phone-img {
+        width: 100%;
+        position: absolute;
+        bottom: -1.5rem;
+    }
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+
+#stats {
+    background-color: #34425A;
+    color: white;
+
+    .stat, .stat--meta {
+        padding: 1rem .5rem;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        flex-flow: column nowrap;
+    }
+
+    .stat--number {
+        line-height: 32px;
+        font-size: 28px;
+        font-weight: 500;
+        color: #EECC56; // yellow
+    }
+
+    .stat--label {
+        font-size: 14px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+
+    .stats--heading {
+        font-size: 28px;
+        margin-bottom: 4px;
+    }
+
+    .stats--description {
+        color: #B7B7B7;
+        font-size: 12px;
+        line-height: 14px;
+    }
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+#products {
+    background-color: white;
+
+    .products--header {
+        text-align: center;
+    }
+
+    .product--list {
+        position: relative;
+    }
+
+    .product {
+        margin: 1rem 2.4rem 4.4rem 1rem;
+        padding: 2rem 3rem 2rem 2rem;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .product--price {
+        font-size: 3rem;
+        line-height: 1;
+
+        &:before {
+            content: '$';
+            font-size: 2rem;
+            margin-right: -.6rem;
+        }
+    }
+
+    .product--name {
+        color: #707A91;
+        font-size: 1.2rem;
+    }
+
+    .product--description {
+        margin-top: 1.5rem;
+        font-size: .875rem;
+    }
+
+    .product--action {
+        position: absolute;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        left: 1rem;
+        bottom: -2.4rem;
+    }
+
+    .product--green {
+        box-shadow: 1rem 3rem 0px 5px $green;
+
+        hr {
+            border: 2px solid $green;
+            border-radius: 8px;
+        }
+    }
+
+    .product--orange {
+        box-shadow: 1rem 3rem 0px 5px $orange;
+
+        hr {
+            border: 2px solid $orange;
+            border-radius: 8px;
+        }
+    }
+
+    .product--red {
+        box-shadow: 1rem 3rem 0px 5px $red;
+
+        hr {
+            border: 2px solid $red;
+            border-radius: 8px;
+        }
+    }
+}
+
+
+#contact {
+    background-color: #569AC5;
+
+    .contact--box {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: -1rem 1rem 0px 0px #ADD5EE;
+    }
+
+    .contact--heading {
+        color: #34425A;
+        font-size: 22px;
+    }
+
+    .contact--description {
+        color: #B7B7B7;
+        font-size: 14px;
+    }
+
+    input {
+        display: block;
+        height: 36px;
+        margin-top: .2rem;
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        font-size: .75rem;
+        margin-bottom: 1rem;
+    }
+
+    #subscribe-img {
+        position: absolute;
+        width: 55%;
+        right: -6%;
+        top: 5rem;
+    }
 }
