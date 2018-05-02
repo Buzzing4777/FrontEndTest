@@ -1,0 +1,338 @@
+﻿$blue: #4981d3;
+$blue-dark: #33415b;
+$blue-light: #abd4fd;
+$orange: #e18401;
+$red: #f12e30;
+$green: #019a39;
+$yellow: #f1ce4a;
+$black: #121921;
+
+$blue-lightest: #eef5fe;
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: $blue-lightest;
+}
+
+
+button.btn-round {
+    padding: (5rem/7) 48px;
+    background: none;
+    color: $blue;
+    border: 2px solid $blue;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    &.btn-yellow {
+        color: white;
+        background-color: $yellow;
+        border-color: $yellow;
+    }
+
+    &.btn-green {
+        color: white;
+        background-color: $green;
+        border-color: $green;
+    }
+}
+
+#rainbow-topper {
+    width: 100%;
+    border-top: 4px solid;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    border-image: linear-gradient(to right, $blue-dark 0px, $blue-dark percentage(1/7), $blue percentage(1/7), $blue percentage(2/7), $blue-light percentage(2/7), $blue-light percentage(3/7), $orange percentage(3/7), $orange percentage(4/7), $red percentage(4/7), $red percentage(5/7), $green percentage(5/7), $green percentage(6/7), $blue-dark percentage(6/7), $blue-dark 100%) 4;
+}
+
+header {
+    border-bottom: 1px solid #E2EBF6;
+
+    #header-container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: .75rem 24px;
+        height: 120px;
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    #navigation {
+        margin-bottom: 4px;
+
+        a {
+            text-decoration: none;
+            color: #7687A4;
+            margin-left: 24px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    #mobile-nav a {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0 auto 24px;
+        color: #7687A4;
+        font-size: 18px;
+    }
+}
+
+
+
+#hero {
+    background: url('../Content/Images/cloudsbg.png') no-repeat center calc(50% + 1.5rem);
+    background-size: 100%;
+
+    #intro-heading {
+        font-size: 2rem;
+        line-height: 1.75;
+        color: #34425A;
+
+        &:before, &:after {
+            @media (min-width: 576px) {
+                display: inline;
+                margin-bottom: 0;
+            }
+
+            display: none;
+            content: '–';
+            font-size: 3.5rem;
+            position: relative;
+            top: (5rem/7);
+            margin-bottom: (5rem/7);
+        }
+    }
+
+    #intro-body {
+        color: #777777;
+        max-width: 540px;
+    }
+
+    #intro-actions button {
+        display: block;
+        margin: 4px 8px;
+    }
+
+    #family-graphic {
+        width: 600px;
+        margin-top: 24px;
+    }
+}
+
+
+#company {
+    background-color: white;
+
+    .company--about {
+        color: #34425A;
+    }
+
+    .company--heading {
+        font-size: 22px;
+    }
+
+    .company--description {
+        font-size: 12px;
+    }
+
+    #phone-img {
+        width: 100%;
+        position: absolute;
+        bottom: -1.5rem;
+    }
+}
+
+
+#stats {
+    background-color: #34425A;
+    color: white;
+
+    .stat, .stat--meta {
+        padding: 1rem .5rem;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        flex-flow: column nowrap;
+    }
+
+    .stat--number {
+        line-height: 32px;
+        font-size: 28px;
+        font-weight: 500;
+        color: #EECC56; // yellow
+    }
+
+    .stat--label {
+        font-size: 14px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+
+    .stats--heading {
+        font-size: 28px;
+        margin-bottom: 4px;
+    }
+
+    .stats--description {
+        color: #B7B7B7;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+#products {
+    background-color: white;
+
+    .products--header {
+        text-align: center;
+    }
+
+    .product--list {
+        position: relative;
+    }
+
+    .product {
+        margin: 1rem 2.4rem 4.4rem 1rem;
+        padding: 2rem 3rem 2rem 2rem;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .product--price {
+        font-size: 3rem;
+        line-height: 1;
+
+        &:before {
+            content: '$';
+            font-size: 2rem;
+            margin-right: -.6rem;
+        }
+    }
+
+    .product--name {
+        color: #707A91;
+        font-size: 1.2rem;
+    }
+
+    .product--description {
+        margin-top: 1.5rem;
+        font-size: .875rem;
+    }
+
+    .product--action {
+        position: absolute;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        left: 1rem;
+        bottom: -2.4rem;
+    }
+
+    .product--green {
+        box-shadow: 1rem 3rem 0px 5px $green;
+
+        hr {
+            border: 2px solid $green;
+            border-radius: 8px;
+        }
+    }
+
+    .product--orange {
+        box-shadow: 1rem 3rem 0px 5px $orange;
+
+        hr {
+            border: 2px solid $orange;
+            border-radius: 8px;
+        }
+    }
+
+    .product--red {
+        box-shadow: 1rem 3rem 0px 5px $red;
+
+        hr {
+            border: 2px solid $red;
+            border-radius: 8px;
+        }
+    }
+}
+
+
+#contact {
+    background-color: #569AC5;
+
+    .contact--box {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: -1.5rem 1.5rem 0px 0px #ADD5EE;
+    }
+
+    .contact--heading {
+        color: #34425A;
+        font-size: 22px;
+    }
+
+    .contact--description {
+        color: #B7B7B7;
+        font-size: 14px;
+    }
+
+    input {
+        display: block;
+        height: 36px;
+        margin-top: .2rem;
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        font-size: .75rem;
+        margin-bottom: 1rem;
+    }
+
+    #subscribe-img {
+        position: absolute;
+        width: 55%;
+        right: -6%;
+        top: 5rem;
+    }
+}
+
+footer {
+    background-color: #121921;
+    color: white;
+    font-size: (5rem/8);
+
+    #footer--nav a {
+        font-size: .75rem;
+        color: white;
+        text-transform: uppercase;
+        margin: 0 8px;
+    }
+    #copyright {
+        color: $blue;
+        font-size: .75rem;
+        text-align: center;
+    }
+}

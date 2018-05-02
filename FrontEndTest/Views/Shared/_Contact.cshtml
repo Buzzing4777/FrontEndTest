@@ -1,0 +1,37 @@
+﻿@model FrontEndTest.Models.ContactFormModel
+
+<div id="contact" class="py-5 px-1">
+    <div class="container">
+        <div class="pl-4">
+            <div class="row justify-content-center no-gutters">
+                <div class="contact--box col-12 col-sm-10 col-xl-8">
+                    <div class="row position-relative w-100 no-gutters">
+                        @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class= "col-md-6 col-lg-5 m-4" }))
+                        {
+                            <h3 class="contact--heading"> Want more info? </h3>
+                            <div class="contact--description mb-3">
+                                Sign up so we can keep in touch.
+                            </div>
+                            <label>
+                                Name
+                                @Html.TextBoxFor(m => m.Name)
+                            </label>
+                            <label>
+                                Email Address 
+                                @Html.TextBoxFor(m => m.Email)
+                            </label>
+                            <label>
+                                Phone Number
+                                @Html.TextBoxFor(m => m.Phone)
+                            </label>
+                            <button type="submit" class="btn-round btn-green mt-3">
+                                Sign up now
+                            </button>
+                        }
+                        <img id="subscribe-img" class="d-none d-md-block img-responsive" src="~/Content/Images/subscribe-img.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
