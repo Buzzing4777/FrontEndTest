@@ -13,7 +13,8 @@ button.btn-round {
   border-radius: 20px;
   font-size: .75rem;
   font-weight: 600;
-  white-space: nowrap; }
+  white-space: nowrap;
+  text-transform: uppercase; }
   button.btn-round.btn-yellow {
     color: white;
     background-color: #f1ce4a;
@@ -32,27 +33,24 @@ header {
     justify-content: space-between;
     padding: .75rem 24px;
     height: 120px; }
-
-#logo {
-  height: 50px; }
-
-#navigation {
-  margin-bottom: 4px; }
-  #navigation a {
-    text-decoration: none;
-    color: #7687A4;
-    margin-left: 24px;
+  header #logo {
+    height: 50px; }
+  header #navigation {
+    margin-bottom: 4px; }
+    header #navigation a {
+      text-decoration: none;
+      color: #7687A4;
+      margin-left: 24px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500; }
+  header #mobile-nav a {
+    display: block;
     text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500; }
-
-#mobile-nav a {
-  display: block;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin: 0 auto 24px;
-  color: #7687A4;
-  font-size: 18px; }
+    font-weight: 500;
+    margin: 0 auto 24px;
+    color: #7687A4;
+    font-size: 18px; }
 
 #hero {
   background: url("Images/cloudsbg.png") no-repeat center calc(50% + 1.5rem);
@@ -76,6 +74,7 @@ header {
     color: #777777;
     max-width: 540px; }
   #hero #intro-actions button {
+    display: block;
     margin: 4px 8px; }
   #hero #family-graphic {
     width: 600px;

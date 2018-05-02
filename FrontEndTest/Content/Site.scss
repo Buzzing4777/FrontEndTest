@@ -28,6 +28,7 @@ button.btn-round {
     font-size: .75rem;
     font-weight: 600;
     white-space: nowrap;
+    text-transform: uppercase;
 
     &.btn-yellow {
         color: white;
@@ -43,47 +44,49 @@ button.btn-round {
 }
 
 header {
-  border-bottom: 1px solid #E2EBF6;
-  #header-container {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    justify-content: space-between;
-    padding: .75rem 24px;
-    height: 120px;
-  }
+    border-bottom: 1px solid #E2EBF6;
 
+    #header-container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: .75rem 24px;
+        height: 120px;
+    }
+
+    #logo {
+        height: 50px;
+    }
+
+    #navigation {
+        margin-bottom: 4px;
+
+        a {
+            text-decoration: none;
+            color: #7687A4;
+            margin-left: 24px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    #mobile-nav a {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0 auto 24px;
+        color: #7687A4;
+        font-size: 18px;
+    }
 }
 
-#logo {
-  height: 50px;
-}
 
-#navigation {
-  margin-bottom: 4px;
-  a {
-    text-decoration: none;
-    color: #7687A4;
-    margin-left: 24px;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-  }
-}
-
-#mobile-nav a {
-    display: block;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 0 auto 24px;
-    color: #7687A4;
-    font-size: 18px;
-}
 
 #hero {
     background: url('../Content/Images/cloudsbg.png') no-repeat center calc(50% + 1.5rem);
     background-size: 100%;
-
 
     #intro-heading {
         font-size: 2rem;
@@ -111,6 +114,7 @@ header {
     }
 
     #intro-actions button {
+        display: block;
         margin: 4px 8px;
     }
 
@@ -126,7 +130,6 @@ header {
 
     .company--about {
         color: #34425A;
-        // max-width: 800px;
     }
 
     .company--heading {

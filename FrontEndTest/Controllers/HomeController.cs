@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using FrontEndTest.Models;
 
 namespace FrontEndTest.Controllers
 {
@@ -10,21 +14,28 @@ namespace FrontEndTest.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new ContactFormModel());
         }
 
-        public ActionResult About()
+       
+        [HttpPost]
+        public async Task<ActionResult> Contact(ContactFormModel model)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (ModelState.IsValid)
+            {
+                var body = "<p>From: {0}</p> <p>Email: <a href=\"mailto:{1}\">{1}</a></p> <p>Phone#: {2}</p>";
+                var message = new MailMessage();
+                message.To.Add(new MailAddress("bearshuford@gmail.com")); 
+                message.Subject = "AllCloud - new contact {0}";
+                message.Body = string.Format(body, model.Name, model.Email, model.Phone);
+                message.IsBodyHtml = true;
+                using (var smtp = new SmtpClient())
+                {
+                    await smtp.SendMailAsync(message);
+                    return RedirectToAction("Index");
+                }
+            }
+            return RedirectToAction("Index");
         }
     }
 }
